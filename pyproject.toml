@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mach1py"
+authors = [{ name = "Turner Jennings", email = "turner.jennings@outlook.com" }]
+description = "Python parser for reading Biomomentum Mach-1 data files"
+readme = "README.md"
+license = { file = "LICENSE" }
+version = "1.0.0"
+
+keywords = ["biomechanics", "parser","biomomentum"]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Topic :: Scientific/Engineering",
+]
+
+requires-python = ">=3.8.1"
+dependencies = ["pandas"]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+
+[project.urls]
+Repository = "https://github.com/AminiLabNU/mach1py"
+Documentation = "https://github.com/AminiLabNU/mach1py/README.md"
+Issues = "https://github.com/AminiLabNU/mach1py/issues"
+
+[tool.pytest.ini_options]
+testpaths = "tests/"
+pythonpath = ["src/"]
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+target-version = "py312"
+
+[tool.ruff.lint]
+fixable = ["ALL"]
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+# Use double quotes for strings.
+quote-style = "double"
+
+# Indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Automatically detect the appropriate line ending.
+line-ending = "auto"
